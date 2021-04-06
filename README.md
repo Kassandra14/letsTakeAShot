@@ -1,4 +1,4 @@
-# youGoGirl :syringe:
+# youGoGirl :earth_americas: :warning:
 
 ## Description
 
