@@ -1,1 +1,27 @@
+
 #mapid { height: 180px; }
+*{
+    margin: 0;
+    padding: 0; 
+    font-family: Arial roun, Helvetica, sans-serif;
+    color: floralwhite;
+}
+
+body{
+    background-color: rgb(80, 75, 75);
+}
+
+.btn{
+    color: floralwhite;
+    background-color: #d4986f;
+    opacity: 1;
+}
+
+.btn:hover{
+    background-color: rgb(164, 208, 221);
+    cursor: pointer;  
+}
+A:hover{
+    background-color: rgb(164, 208, 221);
+    cursor: pointer;
+}
