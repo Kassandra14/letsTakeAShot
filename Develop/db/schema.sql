@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS letsTakeAShot_db;
+CREATE DATABASE letsTakeAShot_db;
