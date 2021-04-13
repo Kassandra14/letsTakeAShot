@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class SavedLocations extends Model {}
 
-Project.init(
+SavedLocations.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,20 +11,21 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    location_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    risk_level: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
-    date_created: {
+    date_added: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
+    quarantine_needed: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
     user_id: {
@@ -44,4 +45,4 @@ Project.init(
   }
 );
 
-module.exports = Project;
+module.exports = SavedLocations;
