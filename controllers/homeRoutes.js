@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
     const savedLocations = savedLocations.map((location) => location.get({ plain: true }));
 
     // Pass serialized data and session flag into template
+    //not sure what this is
     res.render('homepage', { 
       locations, 
       logged_in: req.session.logged_in 
