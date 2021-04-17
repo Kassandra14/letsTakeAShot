@@ -11,7 +11,7 @@ SavedLocations.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    location_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },

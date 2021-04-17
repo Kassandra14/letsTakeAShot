@@ -12,10 +12,10 @@
     <div class="col-md-6 project-list">
       <h3>Saved Locations:</h3>
 
-      {{#each Locations as |Location|}}
+      {{#each locations as |location|}}
       <div class="row mb-2">
         <div class="col-md-8">
-          <h4><a href="/saved-locations/{{location.id}}">{{location.location_name}}</a></h4>
+          <h4><a href="/saved-locations/{{location.id}}">{{location.name}}</a></h4>
           <p>{{location.date_added}}</p>
           <p>{{location.risk_level}}</p>
           <p>{{location.quarantine_needed}}</p>
