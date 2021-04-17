@@ -17,9 +17,9 @@ const users = await User.bulkCreate(userData, {
 
 //  await seedSavedLocations ();
   
-  for (const project of LocationsData) {
-    await SavedLocations.create({
-      ...project,
+  for (const location of LocationsData) {
+    await location.create({
+      ...location,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }

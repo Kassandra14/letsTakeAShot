@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Profile</h3>
+
+    {{#if locations.length}}
+    <div class="col-md-6 project-list">
+      <h3>Saved Locations:</h3>
+
+      {{#each locations as |location|}}
+      <div class="row mb-2">
+        <div class="col-md-8">
+          <h4><a href="/saved-locations/{{location.id}}">{{location.name}}</a></h4>
+          <p>{{location.date_added}}</p>
+          <p>{{location.risk_level}}</p>
+          <p>{{location.quarantine_needed}}</p>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-sm btn-danger" data-id="{{location.id}}">DELETE</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
+
+  <script src="./public/js/profile.js"></script>

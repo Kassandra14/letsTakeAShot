@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
 });
 router.get('/location/:id', async (req, res) => {
     try {
-      const locationData = await location.findByPk(req.params.id, {
+      const LocationsData = await location.findByPk(req.params.id, {
         include: [
           {
             model: User,
@@ -38,7 +38,7 @@ router.get('/location/:id', async (req, res) => {
         ],
       });
   
-      const savedLocation = locationData.get({ plain: true });
+      const savedLocation = dblocationData.get({ plain: true });
   
       res.render('location', {
         ...location,

@@ -1,4 +1,7 @@
-
+header, .location:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+  }
+  
 #mapid { height: 180px; }
 *{
     margin: 0;
