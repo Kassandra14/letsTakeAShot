@@ -1,12 +1,12 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#project-name').value.trim();
+  const name = document.querySelector('#location-name').value.trim();
   const needed_funding = document.querySelector('#project-funding').value.trim();
   const description = document.querySelector('#project-desc').value.trim();
 
   if (name && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
+    const response = await fetch(`/api/locations`, {
       method: 'POST',
       body: JSON.stringify({ name, needed_funding, description }),
       headers: {
@@ -17,7 +17,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to create project');
+      alert('Failed to find locations');
     }
   }
 };
@@ -26,25 +26,25 @@ const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/projects/${id}`, {
+    const response = await fetch(`/api/locations/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete location');
     }
   }
 };
 
 document
-  .querySelector('.new-project-form')
+  .querySelector('.new-location-form')
   .addEventListener('submit', newFormHandler);
 
 
-const projectList = document.querySelector('.project-list');
+const locationList = document.querySelector('.location-list');
 
-if(projectList){
-  projectList.addEventListener('click', delButtonHandler);
+if(locationList){
+  locationList.addEventListener('click', delButtonHandler);
 }
